@@ -1,0 +1,39 @@
+local Character = script.Parent
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Humanoid = Character:WaitForChild("Humanoid");
+local HumanoidRootPart = Character:WaitForChild("HumanoidRootPart");
+
+Humanoid.Changed:connect(function(p4)
+	if Character.Humanoid.MaxHealth == math.huge then
+		LocalPlayer:Kick("Attempt to Hack health (Type: math.huge)")
+	end
+	if Character.Humanoid.MaxHealth >= 3.4028234663853E+38 then
+		LocalPlayer:Kick("Attempt to Hack health (Type: 9ef)")
+	end
+end)
+
+LocalPlayer.Backpack.ChildAdded:Connect(function(p18)
+	if p18.Name == "Click Teleport" or p18.Name == "Teleport Tool" or p18.Name == "TP" or p18.Name == "TP Tool" then
+		LocalPlayer:Kick("Attempt to TP Tool (Type: r3f)")
+	end
+end)
+
+Character.ChildRemoved:Connect(function(p19)
+	if p19.Name == "Humanoid" then
+		if Character:FindFirstChildOfClass("Humanoid") then
+			LocalPlayer:Kick("Attempt to execute God mode (Type: ql4)");
+		end
+	end
+end)
+
+Character.HumanoidRootPart.ChildAdded:Connect(function(p1)
+	if p1.Name == "BodyGyro" or p1.Name == "BodyVelocity" then
+		LocalPlayer:Kick("Attempt to Fly (Type: 9e9)")
+	end
+end)
+
+game.Workspace.Changed:connect(function(p8)
+	if p8 == "Gravity" and game.Workspace.Gravity ~= 196.2 then
+		LocalPlayer:Kick("Attempt to hack gravity (Type: Nu1l)");
+	end
+end)
